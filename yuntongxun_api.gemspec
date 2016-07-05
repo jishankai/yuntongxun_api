@@ -5,7 +5,7 @@ require 'yuntongxun_api/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "yuntongxun_api"
-  spec.version       = YuntongxunApi::VERSION
+  spec.version       = YunTongXun::VERSION
   spec.authors       = ["skji"]
   spec.email         = ["jishankai@qq.com"]
 

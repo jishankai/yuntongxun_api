@@ -1,10 +1,8 @@
-require "ryuntongxun/version"
-require "ryuntongxun/version"
-require "ryuntongxun/configuration"
-require "ryuntongxun/helper"
-require "ryuntongxun/sms"
-require "ryuntongxun/tts"
-require "ryuntongxun/voice"
+require "yuntongxun_api/version"
+require "yuntongxun_api/configuration"
+require "yuntongxun_api/helper"
+require "yuntongxun_api/sms"
+require "yuntongxun_api/voice"
 require "logger"
 
 module YunTongXun
