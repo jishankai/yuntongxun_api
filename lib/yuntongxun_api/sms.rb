@@ -12,11 +12,6 @@ module YunTongXun
         response = get_response(params)
       end
 
-      # 短信发送记录查询
-      def query(params)
-        response = get_response(params)
-      end
-
     end
   end
 end

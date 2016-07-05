@@ -4,7 +4,15 @@ module YunTongXun
     class << self
       include YunTongXun::Helper
 
-      # 语音双呼
+      # 语音验证
+      def voice_verify(params)
+        @accounts = 'Accounts'
+        @method   = 'Calls/VoiceVerify'
+
+        response = get_response(params)
+      end
+
+      # 电话回拨
       def double_call(params)
         @accounts = 'SubAccounts'
         @method   = 'Calls/Callback'
@@ -12,8 +20,19 @@ module YunTongXun
         response = get_response(params)
       end
 
-      # 语音通知
-      def single_call(params)
+      # 取消回拨
+      def cancel_call(params)
+        @accounts = 'Accounts'
+        @method   = 'Calls/CallCancel'
+
+        response = get_response(params)
+      end
+
+      # 外呼通知
+      def landing_call(params)
+        @accounts = 'Accounts'
+        @method   = 'Calls/LandingCalls'
+
         response = get_response(params)
       end
 

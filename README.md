@@ -1,8 +1,11 @@
-# YuntongxunApi
+# YunTongXun Api
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/yuntongxun_api`. To experiment with that code, run `bin/console` for an interactive prompt.
+容联·云通讯SDK for Ruby
 
-TODO: Delete this and the text above, and describe your gem
+DONE: 短信
+DONE: 语音验证码
+DONE: 电话回拨
+DONE: 外呼通知
 
 ## Installation
 
@@ -22,18 +25,86 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Setting
 
-## Development
+Create `config\initializers\yuntongxun.rb`
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```ruby
+YunTongXun.setup do |config|
+  config.server = 'https://app.cloopen.com:8883'
+  config.account_sid = ''
+  config.auth_token = ''
+  config.version = '2013-12-26'
+end
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+### SMS
+
+```ruby
+params = {
+  to: '',
+  appId: '',
+  templateId: '',
+  datas: '',
+}
+
+YunTongXun::Sms.send(params)
+```
+
+### 语音验证
+
+```ruby
+params = {
+  to: '',
+  appId: '',
+  verifyCode: '',
+}
+
+YunTongXun::Voice.voice_verify(params)
+```
+
+### 电话回拨
+
+```ruby
+params = {
+  from: '',
+  to: ''
+}
+
+YunTongXun::Voice.double_call(params)
+```
+
+### 取消回拨
+
+```ruby
+params = {
+  appId: '',
+  callSid: '',
+  type: '',
+}
+
+YunTongXun::Voice.cancel_call(params)
+```
+
+### 取消回拨
+
+```ruby
+params = {
+  appId: '',
+  to: '',
+}
+
+YunTongXun::Voice.landing_call(params)
+```
+
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/yuntongxun_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
+1. [Fork it](https://github.com/skji/yuntongxun_api/fork)
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
 
 ## License
 

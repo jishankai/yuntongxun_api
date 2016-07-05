@@ -30,7 +30,7 @@ module YunTongXun
       # 1.使用MD5加密（账户Id + 账户授权令牌 + 时间戳）。其中账户Id和账户授权令牌根据url的验证级别对应主账户。
       # 时间戳是当前系统时间，格式"yyyyMMddHHmmss"。时间戳有效时间为24小时，如：20140416142030
       # 2.SigParameter参数需要大写，如不能写成sig=abcdefg而应该写成sig=ABCDEFG
-      Digest::MD5.hexdigest(YunTongXun.config.account_sid + YunTongXun.auth_token + timestamp).upcase
+      Digest::MD5.hexdigest(YunTongXun.config.account_sid + YunTongXun.config.auth_token + timestamp).upcase
     end
 
     def headers
