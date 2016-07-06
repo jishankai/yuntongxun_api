@@ -34,6 +34,7 @@ YunTongXun.setup do |config|
   config.server = 'https://app.cloopen.com:8883'
   config.account_sid = ''
   config.auth_token = ''
+  config.app_id = ''
   config.version = '2013-12-26'
 end
 ```
@@ -43,7 +44,6 @@ end
 ```ruby
 params = {
   to: '',
-  appId: '',
   templateId: '',
   datas: '',
 }
@@ -56,7 +56,6 @@ YunTongXun::Sms.send(params)
 ```ruby
 params = {
   to: '',
-  appId: '',
   verifyCode: '',
 }
 
@@ -78,7 +77,6 @@ YunTongXun::Voice.double_call(params)
 
 ```ruby
 params = {
-  appId: '',
   callSid: '',
   type: '',
 }
@@ -86,11 +84,10 @@ params = {
 YunTongXun::Voice.cancel_call(params)
 ```
 
-### 取消回拨
+### 外呼通知
 
 ```ruby
 params = {
-  appId: '',
   to: '',
 }
 
