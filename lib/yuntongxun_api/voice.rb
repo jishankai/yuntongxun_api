@@ -8,6 +8,7 @@ module YunTongXun
       def voice_verify(params)
         @accounts = 'Accounts'
         @method   = 'Calls/VoiceVerify'
+        params[:appId] = params[:appId] || YunTongXun.config.app_id
 
         response = get_response(params)
       end
@@ -24,6 +25,7 @@ module YunTongXun
       def cancel_call(params)
         @accounts = 'Accounts'
         @method   = 'Calls/CallCancel'
+        params[:appId] = params[:appId] || YunTongXun.config.app_id
 
         response = get_response(params)
       end
@@ -32,6 +34,7 @@ module YunTongXun
       def landing_call(params)
         @accounts = 'Accounts'
         @method   = 'Calls/LandingCalls'
+        params[:appId] = params[:appId] || YunTongXun.config.app_id
 
         response = get_response(params)
       end

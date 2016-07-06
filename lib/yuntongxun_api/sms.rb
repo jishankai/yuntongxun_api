@@ -9,6 +9,8 @@ module YunTongXun
       # 短信发送
       def send(params)
         @method = 'SMS/TemplateSMS'
+        params[:appId] = params[:appId] || YunTongXun.config.app_id
+
         response = get_response(params)
       end
 

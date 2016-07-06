@@ -29,7 +29,15 @@ module YunTongXun
     def auth_token=(auth_token)
       @auth_token = auth_token
     end
+    
+    def app_id
+      @app_id ||= 'your_app_id'
+    end
 
+    def app_id=(app_id)
+      @app_id = app_id
+    end
+    
     def version
       @version ||= 'version'
     end
