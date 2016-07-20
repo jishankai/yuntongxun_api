@@ -4,11 +4,11 @@ module YunTongXun
     class << self
       include YunTongXun::Helper
 
-      @accounts = 'Accounts'
-
       # 短信发送
       def send(params)
         @method = 'SMS/TemplateSMS'
+        @accounts = 'Accounts'
+
         params[:appId] = params[:appId] || YunTongXun.config.app_id
 
         response = get_response(params)
